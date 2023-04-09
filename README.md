@@ -1,4 +1,4 @@
-# API para consultar los alumnos
+# API para consultar los alumnos, docentes y aulas
 
 Esta es una api simple para consultar los alumnos, docentes y aulas.
 
