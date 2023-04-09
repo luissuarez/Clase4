@@ -58,10 +58,10 @@ const updateDocente = (req, res) => {
     const docenteData = req.body;
     const index = docentes.findIndex(d => d.legajo == req.params.legajo);
     if(index != -1) {
-        docentes[index].nombre = (typeof docenteData.nombre !== undefined) ? docenteData.nombre : docentes[index].nombre;
-        docentes[index].carrera = (typeof docenteData.carrera !== undefined) ? docenteData.carrera : docentes[index].carrera;
-        docentes[index].concursado = (typeof docenteData.concursado !== undefined) ? docenteData.concursado : docentes[index].concursado;
-        docentes[index].materias = (typeof docenteData.materias !== undefined && docenteData.materias.length > 0) ? docenteData.materias : docentes[index].materias;
+        docentes[index].nombre = (typeof docenteData.nombre !== 'undefined') ? docenteData.nombre : docentes[index].nombre;
+        docentes[index].carrera = (typeof docenteData.carrera !== 'undefined') ? docenteData.carrera : docentes[index].carrera;
+        docentes[index].concursado = (typeof docenteData.concursado !== 'undefined') ? docenteData.concursado : docentes[index].concursado;
+        docentes[index].materias = (typeof docenteData.materias == 'undefined' || docenteData.materias.length == 0) ? docentes[index].materias : docenteData.materias;
         res.status(httpStatusCodes.HTTP_STATUS_CREATED).json({"docente": docentes[index]});
     } else {
         res.status(httpStatusCodes.HTTP_STATUS_NOT_FOUND)
