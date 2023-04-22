@@ -7,7 +7,8 @@
             "calle": "RioBamba",
             "numero": 158,
             "Localidad": "Jose C. Paz"
-        }
+        },
+        "codigoPais": "ARG"
     },
     {
         "nombre":"Florencia",
@@ -17,7 +18,8 @@
             "calle": "La Rioja",
             "numero": 2005,
             "Localidad": "San Miguel"
-        }
+        },
+        "codigoPais": "BRA"
     },
     {
         "nombre":"Dolores",
@@ -27,7 +29,8 @@
             "calle": "Misiones",
             "numero": 2058,
             "Localidad": "San Miguel"
-        }
+        },
+        "codigoPais": "ARG"
     },  
     {
         "nombre":"Luis",
@@ -37,6 +40,7 @@
             "calle": "San Martie",
             "numero": 2058,
             "Localidad": "Jose C. Paz"
-        }
+        },
+        "codigoPais": "COL"
     }       
 ]

@@ -1,7 +1,29 @@
 const alumnos = require('../../datos/alumnos.json');
+const axios = require('axios');
 
-const getAllAlumnos = (req, res)=>{
-    res.json( alumnos ).status(200);
+const getPaisByCodigo = async (codigo) => { 
+    try {
+        res = await axios.get(`https://restcountries.com/v3.1/alpha/${codigo}`);
+        return res.data.map(pais => {
+            return {
+                nombre: pais.name.official,
+                capital: pais.capital,
+                poblacion: pais.population
+            }
+        });
+    } catch (err){
+        console.log(err.code);
+    }
+}
+
+
+const getAllAlumnos = async (req, res) => {
+    const alumnosConPaises = [];
+    for(const alumno of alumnos) { 
+        pais = await getPaisByCodigo(alumno.codigoPais);
+        alumnosConPaises.push({...alumno, pais});
+    }
+    res.json( alumnosConPaises ).status(200);
 }
 
 const getAlumnoByDni = (req, res) => {
